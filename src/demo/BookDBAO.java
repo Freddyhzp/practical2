@@ -2,6 +2,7 @@ package demo;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 143808a on 10/24/2016.
@@ -28,10 +29,23 @@ public class BookDBAO {
 
 
 
-    public ArrayList<BookDetails> getAllBooks(){
-        BookDetails bd = new BookDetails();
-        bd.
 
-        return books;
+
+    public List<BookDetails> getAllBooks(){
+       ArrayList<BookDetails> list = new ArrayList<BookDetails>();
+        for(int i =0; i<5; i++){
+            BookDetails details = new BookDetails();
+            details.setBookId(""+i);
+            details.setDescription("Book desc" + i);
+            details.setFirstName("First Name" + i);
+            details.setSurname("Surname" + i);
+            details.setInventory(i);
+            details.setOnSale(true);
+            details.setPrice(1.0f + i);
+            details.setTitle("title" + i);
+            details.setYear(2014+i);
+            list.add(details);
+        }
+        return list;
     }
 }
